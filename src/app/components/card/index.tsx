@@ -15,9 +15,7 @@ export function Card() {
 
   async function getMovies() {
     try {
-      const response = await axios.get(
-        "https://api.themoviedb.org/3/movie/popular?api_key=4a9b258d43542967020b11c33cd9dad0&language=pt-BR&page=1"
-      );
+      const response = await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=pt-BR&page=1`);
       setMovies(response.data.results);
       // console.log(response.data.results);
     } catch (error) {

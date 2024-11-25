@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <link rel="icon" href="/icon.png" type="image/x-icon" />
-      <body >
+      <body  className="bg-neutral-950 text-white">
         <Header />
         {children}
         <Footer/>
