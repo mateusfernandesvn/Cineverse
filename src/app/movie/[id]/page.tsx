@@ -13,11 +13,9 @@ async function getMovie(id: string) {
   return data;
 }
 
-export default async function Movie({
-  params: { id },
-}: {
-  params: { id: string };
-}) {
+export default async function Movie(props: { params: Promise<{ id: string }> }) {
+  const { id } = await props.params;
+
   const movie:MovieProps = await getMovie(id);
 
   const runtimeFormatted = `${Math.floor(movie.runtime / 60)}h ${
@@ -36,7 +34,7 @@ export default async function Movie({
         <Link href="/">
           <FaArrowLeftLong
             size={30}
-            className="mt-12 w-12 text-white rounded-lg bg-blue-600 hover:bg-blue-700 transition-all duration-300"
+            className="m-12 w-10 text-white rounded-lg"
           />
         </Link>
         <div className="flex flex-col gap-4 mx-auto w-full max-w-2xl items-center justify-center min-h-screen">

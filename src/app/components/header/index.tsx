@@ -9,21 +9,6 @@ export function Header() {
         >
           CineVerse
         </Link>
-
-        <nav className="flex gap-6">
-          <Link
-            href="/"
-            className="font-semibold text-lg text-blue-500 hover:text-purple-600 transition-all duration-300"
-          >
-            Filmes
-          </Link>
-          <Link
-            href="/tv"
-            className="font-semibold text-lg text-blue-500  hover:text-purple-600 transition-all duration-300"
-          >
-            Series
-          </Link>
-        </nav>
       </div>
     </header>
   );
