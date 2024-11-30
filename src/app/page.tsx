@@ -27,7 +27,7 @@ export default function Home() {
     
     <main className="px-5 py-10 min-h-screen">
       <Container>
-      <h1 className="text-4xl text-center font-bold text-white mb-5">Filmes em Cartaz</h1>
+      <h1 className="text-4xl text-center font-bold text-white mb-10 uppercase">🍿 Filmes em alta</h1>
       <Card movies={movies} />
       </Container>
     </main>

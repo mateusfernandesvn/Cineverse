@@ -10,13 +10,13 @@ interface CardProps {
 
 export function Card({ movies }: CardProps) {
   return (
-    <div className="grid gap-7 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <div className="grid gap-7   sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {movies.map((movie) => (
         <Link key={movie.id} href={`movie/${movie.id}`}>
-          <section className="w-full flex flex-col justify-center items-center mb-5">
-            <div className="relative w-full h-96">
+          <section className="w-full flex flex-col  justify-center items-center mb-5">
+            <div className="relative w-full h-96 group overflow-hidden rounded-lg">
               <Image
-                className="rounded-lg hover:opacity-70 transition-all duration-300"
+                className="rounded-lg hover:opacity-70 group-hover:scale-110 transition-all duration-300"
                 src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                 alt={movie.title}
                 priority={true}
