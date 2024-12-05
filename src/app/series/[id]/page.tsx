@@ -5,53 +5,27 @@ import Link from "next/link";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { IoIosStar } from "react-icons/io";
 
-// Função para obter os detalhes do filme
-async function getMovie(id: string): Promise<MovieProps | null> {
-  try {
-    const res = await fetch(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=pt-BR`
-    );
-    if (!res.ok) throw new Error("Erro ao buscar dados do filme.");
-    return await res.json();
-  } catch (error) {
-    console.error("Erro ao buscar filme:", error);
-    return null;
-  }
+async function getSeries(id: string) {
+  const res = await fetch(
+    `https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=pt-BR`
+  );
+  const data = await res.json();
+  return data;
 }
 
-export default async function Movie(props: {
+export default async function series(props: {
   params: Promise<{ id: string }>;
 }) {
   const { id } = await props.params;
+  const movie: MovieProps = await getSeries(id);
 
-  const movie = await getMovie(id);
-
-  if (!movie) {
-    return (
-      <main className="w-full min-h-screen flex items-center justify-center">
-        <Container>
-          <h1 className="text-3xl text-center text-white">
-            Não foi possível carregar as informações do filme. 😔
-          </h1>
-          <Link href="/" className="text-blue-500 mt-4 text-center block">
-            Voltar à página inicial
-          </Link>
-        </Container>
-      </main>
-    );
-  }
-
-  const runtimeFormatted = movie.runtime
-    ? `${Math.floor(movie.runtime / 60)}h ${movie.runtime % 60}m`
-    : "Duração não disponível";
-
-  const releaseDate = movie.release_date
-    ? new Date(movie.release_date).toLocaleDateString("pt-BR", {
+  const first_air_date = movie.first_air_date
+    ? new Date(movie.first_air_date).toLocaleDateString("pt-BR", {
         year: "numeric",
         month: "long",
         day: "numeric",
       })
-    : "Data de lançamento não disponível";
+    : "Data não disponível";
 
   return (
     <main className="w-full min-h-screen">
@@ -69,7 +43,7 @@ export default async function Movie(props: {
               src={`https://image.tmdb.org/t/p/w500/${
                 movie.poster_path || "default-image.jpg"
               }`}
-              alt={movie.title || "Imagem não disponível"}
+              alt={movie.title || movie.name || "Série"}
               priority={true}
               fill={true}
               quality={100}
@@ -79,10 +53,14 @@ export default async function Movie(props: {
 
           <section className="flex flex-col gap-3">
             <h1 className="text-3xl font-bold text-center">
-              {movie.title || "Título não disponível"}
+              {movie.title || movie.name || "Título indisponível"}
             </h1>
             <div className="flex gap-4 text-center justify-center">
-              <p>{runtimeFormatted}</p>
+              <p>
+                Temp:{" "}
+                {movie.number_of_seasons ||
+                  "Número de temporadas não disponível"}{" "}
+              </p>
               <p>
                 {movie.genres && movie.genres.length > 0
                   ? movie.genres.map((genre, index) => (
@@ -98,17 +76,17 @@ export default async function Movie(props: {
               <h2 className="text-2xl font-bold mt-2">Sinopse</h2>
               <p>{movie.overview || "Sinopse não disponível."}</p>
             </div>
+
             <div>
               <h2 className="text-2xl font-bold mt-2">Data de Lançamento</h2>
-              <p>{releaseDate}</p>
+              <p>{first_air_date}</p>
             </div>
+
             <div>
               <h2 className="text-2xl font-bold mt-2">Avaliação</h2>
               <p className="flex items-center gap-2 text-lg text-white mt-2 text-center">
                 <IoIosStar color="yellow" />
-                {movie.vote_average
-                  ? movie.vote_average.toFixed(1)
-                  : "Avaliação não disponível"}
+                {movie.vote_average ? movie.vote_average.toFixed(1) : "N/A"}
               </p>
             </div>
           </section>
