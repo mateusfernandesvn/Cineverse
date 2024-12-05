@@ -11,7 +11,6 @@ export interface MovieProps {
   genres: Genre[];
   runtime: number;
   revenue: number;
-  trailer?: Trailer; // Nova propriedade para o trailer
 }
 
 export interface Genre {
@@ -19,10 +18,3 @@ export interface Genre {
   name: string;
 }
 
-// Nova interface para o trailer
-export interface Trailer {
-  key: string; 
-  name: string;
-  site: string;
-  type: string;
-}
