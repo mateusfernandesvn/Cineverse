@@ -63,7 +63,7 @@ export default async function Movie(props: {
           />
         </Link>
         <div className="flex flex-col gap-4 mx-auto w-full max-w-2xl items-center justify-center min-h-screen">
-          <div className="flex relative mt-4 w-1/2 h-96">
+          <div className="flex relative mt-4 w-1/2 h-96 max-sm:h-80 max-sm:w-64">
             <Image
               className="rounded-lg hover:opacity-70 transition-all duration-300"
               src={`https://image.tmdb.org/t/p/w500/${
