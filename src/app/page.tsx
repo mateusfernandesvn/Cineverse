@@ -4,8 +4,8 @@ import axios from "axios";
 import { MovieProps } from "@/app/utils/types/movie";
 import { Container } from "./components/container";
 import { Swiper, SwiperSlide } from "swiper/react";
+import PacmanLoader from "react-spinners/PacmanLoader"
 import Link from "next/link";
-
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -54,13 +54,19 @@ export default function Home() {
   return (
     <main className="px-5 py-10 min-h-screen">
       <Container>
+        <div className="w-full h-96 bg-gradient-to-r from-blue-800 via-blue-600 to-purple-700 rounded-lg mb-10 flex items-center justify-center">
+          <h1 className="text-white text-4xl font-semibold max-w-3xl text-center tracking-wider uppercase max-sm:text-2xl">
+            Não perca! Descubra os maiores sucessos de filmes e séries.
+          </h1>
+        </div>
+
         {/* Seção de Filmes */}
         <div className="mb-10">
           <h1 className="text-3xl text-white my-10 uppercase font-semibold">
             🍿 Filmes em alta
           </h1>
           {loadingMovies ? (
-            <p className="text-white text-center">Carregando filmes...</p>
+              <PacmanLoader color="white"/>
           ) : errorMovies ? (
             <p className="text-red-500 text-center">{errorMovies}</p>
           ) : (
@@ -121,7 +127,7 @@ export default function Home() {
             📺 Séries em alta
           </h1>
           {loadingSeries ? (
-            <p className="text-white text-center">Carregando séries...</p>
+          <PacmanLoader color="white" />
           ) : errorSeries ? (
             <p className="text-red-500 text-center">{errorSeries}</p>
           ) : (
