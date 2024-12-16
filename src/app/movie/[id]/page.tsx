@@ -96,11 +96,11 @@ export default async function Movie(props: {
             </div>
             <div>
               <h2 className="text-2xl font-bold mt-2">Sinopse</h2>
-              <p className="text-gray-300">{movie.overview || "Sinopse não disponível."}</p>
+              <p className="text-gray-300 text-justify my-1">{movie.overview || "Sinopse não disponível."}</p>
             </div>
             <div>
               <h2 className="text-2xl font-bold mt-2 ">Data de Lançamento</h2>
-              <p className="text-gray-300">{releaseDate}</p>
+              <p className="text-gray-300 my-1">{releaseDate}</p>
             </div>
             <div>
               <h2 className="text-2xl font-bold mt-2">Avaliação</h2>

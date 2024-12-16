@@ -55,11 +55,11 @@ export default async function series(props: {
             <h1 className="text-3xl font-bold text-center">
               {movie.title || movie.name || "Título indisponível"}
             </h1>
-            <div className="flex gap-4 text-center justify-center">
+            <div className="flex flex-wrap gap-4 text-center justify-center">
               <p>
-                Temp:{" "}
+                Temporada:
                 {movie.number_of_seasons ||
-                  "Número de temporadas não disponível"}{" "}
+                  "Número de temporadas não disponível"}
               </p>
               <p className="text-gray-300">
                 {movie.genres && movie.genres.length > 0
@@ -74,12 +74,14 @@ export default async function series(props: {
             </div>
             <div>
               <h2 className="text-2xl font-bold mt-2">Sinopse</h2>
-              <p className="text-gray-300">{movie.overview || "Sinopse não disponível."}</p>
+              <p className="text-gray-300 text-justify my-1">
+                {movie.overview || "Sinopse não disponível."}
+              </p>
             </div>
 
             <div>
               <h2 className="text-2xl font-bold mt-2">Data de Lançamento</h2>
-              <p className="text-gray-300">{first_air_date}</p>
+              <p className="text-gray-300 my-1">{first_air_date}</p>
             </div>
 
             <div>
