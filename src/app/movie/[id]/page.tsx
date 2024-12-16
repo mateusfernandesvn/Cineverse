@@ -5,7 +5,7 @@ import Link from "next/link";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { IoIosStar } from "react-icons/io";
 
-// Função para obter os detalhes do filme
+
 async function getMovie(id: string): Promise<MovieProps | null> {
   try {
     const res = await fetch(
@@ -63,7 +63,7 @@ export default async function Movie(props: {
           />
         </Link>
         <div className="flex flex-col gap-4 mx-auto w-full max-w-3xl items-center justify-center min-h-screen">
-          <div className="flex relative mt-4 w-1/2 h-96 max-sm:h-80 max-sm:w-64">
+          <div className="flex relative mt-4 w-96 h-96 max-sm:h-80 max-sm:w-64">
             <Image
               className="rounded-lg hover:opacity-70 transition-all duration-300"
               src={`https://image.tmdb.org/t/p/w500/${
@@ -82,8 +82,8 @@ export default async function Movie(props: {
               {movie.title || "Título não disponível"}
             </h1>
             <div className="flex gap-4 text-center justify-center">
-              <p>{runtimeFormatted}</p>
-              <p>
+              <p className="text-gray-300">{runtimeFormatted}</p>
+              <p className="text-gray-300">
                 {movie.genres && movie.genres.length > 0
                   ? movie.genres.map((genre, index) => (
                       <span key={genre.id}>
@@ -96,15 +96,15 @@ export default async function Movie(props: {
             </div>
             <div>
               <h2 className="text-2xl font-bold mt-2">Sinopse</h2>
-              <p>{movie.overview || "Sinopse não disponível."}</p>
+              <p className="text-gray-300">{movie.overview || "Sinopse não disponível."}</p>
             </div>
             <div>
-              <h2 className="text-2xl font-bold mt-2">Data de Lançamento</h2>
-              <p>{releaseDate}</p>
+              <h2 className="text-2xl font-bold mt-2 ">Data de Lançamento</h2>
+              <p className="text-gray-300">{releaseDate}</p>
             </div>
             <div>
               <h2 className="text-2xl font-bold mt-2">Avaliação</h2>
-              <p className="flex items-center gap-2 text-lg text-white mt-2 text-center">
+              <p className="flex items-center gap-2 text-lg text-yellow-300 mt-2 text-center">
                 <IoIosStar color="yellow" />
                 {movie.vote_average
                   ? movie.vote_average.toFixed(1)

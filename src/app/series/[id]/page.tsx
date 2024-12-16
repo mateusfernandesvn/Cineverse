@@ -61,7 +61,7 @@ export default async function series(props: {
                 {movie.number_of_seasons ||
                   "Número de temporadas não disponível"}{" "}
               </p>
-              <p>
+              <p className="text-gray-300">
                 {movie.genres && movie.genres.length > 0
                   ? movie.genres.map((genre, index) => (
                       <span key={genre.id}>
@@ -74,17 +74,17 @@ export default async function series(props: {
             </div>
             <div>
               <h2 className="text-2xl font-bold mt-2">Sinopse</h2>
-              <p>{movie.overview || "Sinopse não disponível."}</p>
+              <p className="text-gray-300">{movie.overview || "Sinopse não disponível."}</p>
             </div>
 
             <div>
               <h2 className="text-2xl font-bold mt-2">Data de Lançamento</h2>
-              <p>{first_air_date}</p>
+              <p className="text-gray-300">{first_air_date}</p>
             </div>
 
             <div>
               <h2 className="text-2xl font-bold mt-2">Avaliação</h2>
-              <p className="flex items-center gap-2 text-lg text-white mt-2 text-center">
+              <p className="flex items-center gap-2 text-lg text-yellow-300 mt-2 text-center">
                 <IoIosStar color="yellow" />
                 {movie.vote_average ? movie.vote_average.toFixed(1) : "N/A"}
               </p>

@@ -4,11 +4,13 @@ import axios from "axios";
 import { MovieProps } from "@/app/utils/types/movie";
 import { Container } from "./components/container";
 import { Swiper, SwiperSlide } from "swiper/react";
-import PacmanLoader from "react-spinners/PacmanLoader"
+import Image from "next/image";
+import PacmanLoader from "react-spinners/PacmanLoader";
 import Link from "next/link";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { Card } from "./components/cards";
 
 export default function Home() {
   const [movies, setMovies] = useState<MovieProps[]>([]);
@@ -52,12 +54,36 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="px-5 py-10 min-h-screen">
+    <main className="px-5 py-10 min-h-screen ">
       <Container>
-        <div className="w-full h-96 bg-gradient-to-r from-blue-800 via-blue-600 to-purple-700 rounded-lg mb-10 flex items-center justify-center">
-          <h1 className="text-white text-4xl font-semibold max-w-3xl text-center tracking-wider uppercase max-sm:text-2xl">
-            Não perca! Descubra os maiores sucessos de filmes e séries.
-          </h1>
+        <div className="w-full flex mb-12 max-sm:h-42">
+          <Image
+            src="/banner.png"
+            alt="Banner"
+            className="w-full object-cover rounded-lg brightness-75 max-sm:object-right"
+            quality={100}
+            priority={true}
+            width={1500}
+            height={600}
+          />
+        </div>
+
+        <div className="w-full flex flex-col mb-10">
+          <h2 className="text-2xl text-white my-10 uppercase font-semibold">Navegue pelos Gêneros de Cinema</h2>
+          <div className="grid grid-cols-6 gap-4 max-lg:grid-cols-3 max-sm:grid-cols-2">
+            <Card name="Ação"> </Card>
+            <Card name="Aventura"> </Card>
+            <Card name="Comédia"> </Card>
+            <Card name="Drama"> </Card>
+            <Card name="Romance"> </Card>
+            <Card name="Terror"> </Card>
+            <Card name="Suspense"> </Card>
+            <Card name="Fantasia"> </Card>
+            <Card name="Mistério"> </Card>
+            <Card name="Thriller"> </Card>
+            <Card name="Animação"> </Card>
+            <Card name="Documentário"> </Card>
+          </div>
         </div>
 
         {/* Seção de Filmes */}
@@ -66,7 +92,7 @@ export default function Home() {
             🍿 Filmes em alta
           </h1>
           {loadingMovies ? (
-              <PacmanLoader color="white"/>
+            <PacmanLoader color="white" />
           ) : errorMovies ? (
             <p className="text-red-500 text-center">{errorMovies}</p>
           ) : (
@@ -127,7 +153,7 @@ export default function Home() {
             📺 Séries em alta
           </h1>
           {loadingSeries ? (
-          <PacmanLoader color="white" />
+            <PacmanLoader color="white" />
           ) : errorSeries ? (
             <p className="text-red-500 text-center">{errorSeries}</p>
           ) : (
