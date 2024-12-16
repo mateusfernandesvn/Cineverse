@@ -56,11 +56,11 @@ export default function Home() {
   return (
     <main className="px-5 py-10 min-h-screen ">
       <Container>
-        <div className="w-full flex max-sm:h-52">
+        <div className="w-full flex ">
           <Image
             src="/banner.png"
             alt="Banner"
-            className="w-full object-cover rounded-lg brightness-75 max-sm:object-left hover:brightness-100 duration-300 transition-all"
+            className="w-full object-cover rounded-lg brightness-75 max-sm:object-left max-sm:h-52 hover:brightness-100 duration-300 transition-all"
             quality={100}
             priority={true}
             width={1500}
