@@ -56,11 +56,11 @@ export default function Home() {
   return (
     <main className="px-5 py-10 min-h-screen ">
       <Container>
-        <div className="w-full flex mb-12 max-sm:h-42">
+        <div className="w-full flex max-sm:h-36">
           <Image
             src="/banner.png"
             alt="Banner"
-            className="w-full object-cover rounded-lg brightness-75 max-sm:object-right"
+            className="w-full object-cover rounded-lg brightness-75 max-sm:object-right hover:brightness-100 duration-300 transition-all"
             quality={100}
             priority={true}
             width={1500}
@@ -68,8 +68,10 @@ export default function Home() {
           />
         </div>
 
-        <div className="w-full flex flex-col mb-10">
-          <h2 className="text-2xl text-white my-10 uppercase font-semibold">Navegue pelos Gêneros de Cinema</h2>
+        <div className="w-full flex flex-col mb-16">
+          <h2 className="text-3xl text-white my-10 uppercase font-semibold max-md:text-2xl">
+            Navegue pelos Gêneros de Cinema
+          </h2>
           <div className="grid grid-cols-6 gap-4 max-lg:grid-cols-3 max-sm:grid-cols-2">
             <Card name="Ação"> </Card>
             <Card name="Aventura"> </Card>
@@ -88,8 +90,8 @@ export default function Home() {
 
         {/* Seção de Filmes */}
         <div className="mb-10">
-          <h1 className="text-3xl text-white my-10 uppercase font-semibold">
-            🍿 Filmes em alta
+          <h1 className="text-3xl text-white my-10 text-center uppercase font-semibold max-md:text-2xl">
+            Filmes em alta
           </h1>
           {loadingMovies ? (
             <PacmanLoader color="white" />
@@ -149,8 +151,8 @@ export default function Home() {
 
         {/* Seção de Séries */}
         <div className="mb-10">
-          <h1 className="text-3xl text-white my-10 uppercase font-semibold">
-            📺 Séries em alta
+          <h1 className="text-3xl text-white my-10 text-center uppercase font-semibold max-md:text-2xl">
+            Séries em alta
           </h1>
           {loadingSeries ? (
             <PacmanLoader color="white" />

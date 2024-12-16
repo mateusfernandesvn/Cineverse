@@ -4,13 +4,13 @@ import { FaHeart } from "react-icons/fa";
 
 export function Header() {
   return (
-    <header className="h-20 bg-black w-full">
+    <header className="h-20 bg-gray-950 w-full">
       <div className="flex justify-around items-center h-full">
       <Link
         href="/"
-        className="uppercase tracking-wider text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-800 via-blue-600 to-purple-700 hover:text-white transition duration-300"
+        className="uppercase tracking-wider text-3xl font-extrabold text-white "
       >
-        CineVerse
+        <span className="text-red-600">Cine</span>Verse
       </Link>
         <nav className="flex items-center gap-4">
           <FaHeart size={25} title="Fvoritos" />

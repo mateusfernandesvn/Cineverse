@@ -3,12 +3,12 @@ import { FaInstagram, FaTwitter, FaFacebook } from "react-icons/fa";
 
 export function Footer() {
   return (
-    <footer className="flex bg-black  mt-12 flex-col justify-center items-center mx-auto gap-3 px-6 py-4">
-      <Link
+    <footer className="flex bg-gray-950  mt-12 flex-col justify-center items-center mx-auto gap-3 px-6 py-4">
+    <Link
         href="/"
-        className="uppercase tracking-wider text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-800 via-blue-600 to-purple-700 hover:text-white transition duration-300"
+        className="uppercase tracking-wider text-3xl font-extrabold text-white "
       >
-        CineVerse
+        <span className="text-red-600">Cine</span>Verse
       </Link>
       
       {/* Redes Sociais - Ícones */}
@@ -25,7 +25,7 @@ export function Footer() {
       </div>
 
       {/* Direitos Autorais */}
-      <p className="text-sm text-slate-400 mt-2">Desenvolvido por MF - 2024. Todos os direitos reservados.</p>
+      <p className="text-sm text-center text-slate-400 mt-2">Desenvolvido por MF - 2024. Todos os direitos reservados.</p>
     </footer>
   );
 }

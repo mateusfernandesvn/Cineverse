@@ -46,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <link rel="icon" href="/icon.png" type="image/x-icon" />
-      <body className="bg-neutral-950 text-white">
+      <body className="bg-gray-900 text-white">
         <Header />
         {children}
         <Footer />
