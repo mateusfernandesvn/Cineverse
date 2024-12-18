@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { FaInstagram, FaTwitter, FaFacebook } from "react-icons/fa";
+import { FaInstagram, FaFacebook } from "react-icons/fa";
+import { BsTwitterX } from "react-icons/bs";
+
 
 export function Footer() {
   return (
@@ -17,7 +19,7 @@ export function Footer() {
           <FaInstagram size={24} />
         </Link>
         <Link href="https://www.twitter.com" className="text-slate-400 hover:text-white transition duration-300">
-          <FaTwitter size={24} />
+          <BsTwitterX  size={24} />
         </Link>
         <Link href="https://www.facebook.com" className="text-slate-400 hover:text-white transition duration-300">
           <FaFacebook size={24} />
