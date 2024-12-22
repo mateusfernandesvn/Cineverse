@@ -3,8 +3,9 @@
 O Cineverse é uma aplicação desenvolvida com Next.js, TypeScript e React, que consome dados da API do The Movie Database (TMDb). O projeto oferece uma experiência interativa para os usuários, permitindo que explorem informações sobre filmes e  séries.
 
 ## 📸 Imagem do projeto
-![cineverse](https://github.com/user-attachments/assets/8559402d-b8b9-4e8f-9800-0000ae3ea6d6)
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8075d84c-2021-40bc-9ce4-f69a2a626981" alt="Imagem do projeto">
+</p>
 
 ## 💻 Tecnologias Utilizadas
 - **[Next.js](https://nextjs.org/)**: Framework para React que possibilita renderização do lado do servidor e geração de sites estáticos, oferecendo uma excelente performance e SEO.
