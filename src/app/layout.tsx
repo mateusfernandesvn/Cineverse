@@ -36,6 +36,27 @@ export const metadata: Metadata = {
       noimageindex: true,
     },
   },
+  openGraph: {
+    url: "https://cineverseofc.vercel.app/",
+    siteName: "Cineverse",
+    images: [
+      {
+        url: "/logo.svg", 
+        width: 1200,
+        height: 630,
+        alt: "Cineverse - Encontre seus filmes favoritos",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cineverse - Encontre seus filmes favoritos",
+    description: "Encontre seus filmes favoritos com facilidade no Cineverse!",
+    images: ["/logo.svg"], 
+  },
+  
 };
 
 export default function RootLayout({
